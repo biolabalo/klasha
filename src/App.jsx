@@ -2,226 +2,21 @@ import { useState } from "react";
 import Logo from "./assets/klasha.png";
 import viteLogo from "/vite.svg";
 import "./App.css";
+import { Analytics } from '@vercel/analytics/react';
+
 
 function App() {
   const [count, setCount] = useState(0);
 
   return (
     <>
+       <Analytics />
       <div id="app" className="md:flex antialiased">
         <SideBar />
-        <main className="bg-gray-100 h-screen w-full overflow-y-auto">
-          <section v-if="active === 'performance'" id="performance">
-            <header className="border-b border-solid border-gray-300 bg-white">
-              <h2 className="p-6">Performance</h2>
-            </header>
-            <section className="m-4 bg-white border border-gray-300 border-solid rounded shadow">
-              <header className="border-b border-solid border-gray-300 p-4 text-lg font-medium">
-                Buildings Overview
-              </header>
-              <section className=" flex flex-row flex-wrap items-center text-center border-b border-solid border-gray-300">
-                <div className="p-4 w-full sm:w-1/2 lg:w-1/4 border-b border-solid border-gray-300 md:border-b-0 sm:border-r">
-                  <span className="text-xs font-medium text-gray-500 uppercase">
-                    TOTAL REVENUE
-                  </span>
-                  <div className="py-4 flex items-center justify-center text-center">
-                    <span className="mr-4 text-3xl">$485,985</span>
-                    <span className="inline-flex items-center bg-green-500 h-6 px-2 rounded text-white text-xs">
-                      +9.1%
-                    </span>
-                  </div>
-                </div>
-                <div className="p-4 w-full sm:w-1/2 lg:w-1/4 border-b border-solid border-gray-300 md:border-b-0 sm:border-r">
-                  <span className="text-xs font-medium text-gray-500 uppercase">
-                    PREDICTED MONTHLY REVENUE
-                  </span>
-                  <div className="py-4 flex items-center justify-center text-center">
-                    <span className="mr-4 text-3xl">$6,576</span>
-                    <span className="inline-flex items-center bg-green-500 h-6 px-2 rounded text-white text-xs">
-                      +12.0%
-                    </span>
-                  </div>
-                </div>
-                <div className="p-4 w-full sm:w-1/2 lg:w-1/4 border-b border-solid border-gray-300 md:border-b-0 sm:border-r">
-                  <span className="text-xs font-medium text-gray-500 uppercase">
-                    ACTIVE RENTERS
-                  </span>
-                  <div className="py-4 flex items-center justify-center text-center">
-                    <span className="mr-4 text-3xl">152</span>
-                    <span className="inline-flex items-center bg-red-500 h-6 px-2 rounded text-white text-xs">
-                      -12
-                    </span>
-                  </div>
-                </div>
-                <div className="p-4 w-full sm:w-1/2 lg:w-1/4 border-b border-solid border-gray-300 md:border-b-0 sm:border-r flex flex-col items-center">
-                  <span className="text-xs font-medium text-gray-500 uppercase">
-                    PENDING RENTS
-                  </span>
-                  <span className="block py-4 text-gray-500 text-3xl">
-                    $930,10
-                  </span>
-                </div>
-              </section>
-              <section id="chart" className="p-4">
-                <canvas id="myChart" width={200} height={200} />
-              </section>
-            </section>
-            <div className="flex flex-wrap flex-row">
-              <div className="w-full lg:w-1/2">
-                <section className="m-4 bg-white border border-gray-300 border-solid rounded shadow">
-                  <header className="border-b border-solid border-gray-300 p-4 text-lg font-medium">
-                    Most Profitable Renters
-                  </header>
-                  <section className="overflow-x-auto w-full">
-                    <table
-                      className="w-full"
-                      cellPadding={0}
-                      cellSpacing={0}
-                      border={0}
-                    >
-                      <tbody>
-                        <tr>
-                          <td className="p-2 py-4 border-b border-solid border-gray-300">
-                            <div className="pl-4 flex flex-wrap flex-row items-center">
-                              <div className="mr-4 h-12 w-12 bg-red-600 rounded-full block flex  flex-row justify-center items-center text-white">
-                                A
-                              </div>
-                              <div className="text-gray-700">Adobe</div>
-                            </div>
-                          </td>
-                          <td className="text-right p-2 pr-4 border-b border-solid border-gray-300 text-gray-700">
-                            $35,210.66
-                          </td>
-                        </tr>
-                        <tr>
-                          <td className="p-2 py-4 border-b border-solid border-gray-300">
-                            <div className="pl-4 flex flex-wrap flex-row items-center">
-                              <div className="mr-4 h-12 w-12 bg-green-600 rounded-full block flex  flex-row justify-center items-center text-white">
-                                B
-                              </div>
-                              <div className="text-gray-700">
-                                Bank of America
-                              </div>
-                            </div>
-                          </td>
-                          <td className="text-right p-2 pr-4 border-b border-solid border-gray-300 text-gray-700">
-                            $11,456.84
-                          </td>
-                        </tr>
-                        <tr>
-                          <td className="p-2 py-4 border-b border-solid border-gray-300">
-                            <div className="pl-4 flex flex-wrap flex-row items-center">
-                              <div className="mr-4 h-12 w-12 bg-blue-600 rounded-full block flex  flex-row justify-center items-center text-white">
-                                L
-                              </div>
-                              <div className="text-gray-700">
-                                Lamborghini Automobili
-                              </div>
-                            </div>
-                          </td>
-                          <td className="text-right p-2 pr-4 border-b border-solid border-gray-300 text-gray-700">
-                            $35,210.66
-                          </td>
-                        </tr>
-                        <tr>
-                          <td className="p-2 py-4 border-b border-solid border-gray-300">
-                            <div className="pl-4 flex flex-wrap flex-row items-center">
-                              <div className="mr-4 h-12 w-12 bg-yellow-600 rounded-full block flex  flex-row justify-center items-center text-white">
-                                G
-                              </div>
-                              <div className="text-gray-700">Google London</div>
-                            </div>
-                          </td>
-                          <td className="text-right p-2 pr-4 border-b border-solid border-gray-300 text-gray-700">
-                            $9,586.11
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </section>
-                </section>
-              </div>
-              <div className="w-full lg:w-1/2">
-                <section className="m-4 bg-white border border-gray-300 border-solid rounded shadow">
-                  <header className="border-b border-solid border-gray-300 p-4 text-lg font-medium">
-                    Latest Invoices
-                  </header>
-                  <section className="overflow-x-auto w-full">
-                    <table
-                      className="w-full"
-                      cellPadding={0}
-                      cellSpacing={0}
-                      border={0}
-                    >
-                      <tbody>
-                        <tr>
-                          <td className="p-2 py-4 border-b border-solid border-gray-300">
-                            <div className="pl-4 flex flex-wrap flex-row items-center">
-                              <div className="mr-4 h-12 w-12 bg-red-600 rounded-full block flex  flex-row justify-center items-center text-white">
-                                A
-                              </div>
-                              <div className="text-gray-700">Adobe</div>
-                            </div>
-                          </td>
-                          <td className="text-right p-2 pr-4 border-b border-solid border-gray-300 text-gray-700">
-                            $35,210.66
-                          </td>
-                        </tr>
-                        <tr>
-                          <td className="p-2 py-4 border-b border-solid border-gray-300">
-                            <div className="pl-4 flex flex-wrap flex-row items-center">
-                              <div className="mr-4 h-12 w-12 bg-green-600 rounded-full block flex  flex-row justify-center items-center text-white">
-                                B
-                              </div>
-                              <div className="text-gray-700">
-                                Bank of America
-                              </div>
-                            </div>
-                          </td>
-                          <td className="text-right p-2 pr-4 border-b border-solid border-gray-300 text-gray-700">
-                            $11,456.84
-                          </td>
-                        </tr>
-                        <tr>
-                          <td className="p-2 py-4 border-b border-solid border-gray-300">
-                            <div className="pl-4 flex flex-wrap flex-row items-center">
-                              <div className="mr-4 h-12 w-12 bg-blue-600 rounded-full block flex  flex-row justify-center items-center text-white">
-                                L
-                              </div>
-                              <div className="text-gray-700">
-                                Lamborghini Automobili
-                              </div>
-                            </div>
-                          </td>
-                          <td className="text-right p-2 pr-4 border-b border-solid border-gray-300 text-gray-700">
-                            $35,210.66
-                          </td>
-                        </tr>
-                        <tr>
-                          <td className="p-2 py-4 border-b border-solid border-gray-300">
-                            <div className="pl-4 flex flex-wrap flex-row items-center">
-                              <div className="mr-4 h-12 w-12 bg-yellow-600 rounded-full block flex  flex-row justify-center items-center text-white">
-                                G
-                              </div>
-                              <div className="text-gray-700">Google London</div>
-                            </div>
-                          </td>
-                          <td className="text-right p-2 pr-4 border-b border-solid border-gray-300 text-gray-700">
-                            $9,586.11
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </section>
-                </section>
-              </div>
-            </div>
-          </section>
-          <section v-if="active === 'new'" id="new">
-            <header className="border-b border-solid border-gray-300 bg-white">
-              <h2 className="p-6">New</h2>
-            </header>
-          </section>
+        <main className="bg-white-100 h-screen w-full overflow-y-auto">
+          <Header />
+
+          <SalesOverview />
         </main>
       </div>
     </>
@@ -230,38 +25,102 @@ function App() {
 
 export default App;
 
+const Component1 = () => (<div>
+  <p className='font-inter text-sm font-normal'>Today's sales</p>
+  <h5 className='font-general-sans text-lg font-medium'>₦1,652.50</h5>
+</div>)
+const Component2 = () => <div>Component 2 Content</div>;
+const Component3 = () => <div>Component 3 Content</div>;
+const Component4 = () => <div>Component 4 Content</div>;
+
+const componentsArray = [Component1, Component2, Component3, Component4];
+
+const colorsArray = ['#FFFFFF', '#000000', '#FFFFFF', '#FFFFFF'];
+
+const SalesOverview = () => (
+  <section className='px-6 pt-20'>
+    <h5 className="text-[#1A1A1A] font-sans font-normal font-medium text-xl my-10">
+      Sales overview
+    </h5>
+
+    <div className="flex flex-wrap justify-between">
+    {componentsArray.map((Component, index) => (
+        <div
+          key={index}
+          className="w-64 h-60 border-2 border-solid border-black rounded-lg mb-4 mr-4 p-8"
+          style={{ backgroundColor: colorsArray[index] }}
+        >
+          <Component />
+        </div>
+      ))}
+    </div>
+  </section>
+);
+
+const Header = () => (
+  <header className="border-b-2 border-solid border-[#EDEDED] bg-white">
+    <div className="flex justify-end  gap-1 pr-6 py-4">
+      <UserIcon />
+
+      <DownArrow />
+
+      <En />
+
+      <DownArrow />
+    </div>
+  </header>
+);
+const UserIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={32}
+    height={32}
+    viewBox="0 0 32 32"
+    fill="none"
+    className="mb-0"
+  >
+    <path
+      d="M28.8434 15.9995C28.8434 23.0803 22.8319 28.8435 15.9995 28.8435C9.16708 28.8435 3.15552 23.0803 3.15552 15.9995C3.15552 8.90598 8.90595 3.15555 15.9995 3.15555C23.093 3.15555 28.8434 8.90598 28.8434 15.9995Z"
+      stroke="#0A0A0A"
+      strokeWidth={2}
+    />
+    <circle
+      cx="15.9991"
+      cy="10.8089"
+      r="3.32624"
+      stroke="#0A0A0A"
+      strokeWidth={2}
+    />
+    <path
+      d="M22.7872 20.7606C22.7872 21.2529 22.362 21.9679 21.0591 22.6193C19.816 23.2409 18.0287 23.6542 15.9999 23.6542C13.9711 23.6542 12.1838 23.2409 10.9407 22.6193C9.63784 21.9679 9.21271 21.2529 9.21271 20.7606C9.21271 20.2847 9.26521 19.9215 9.38689 19.6282C9.49973 19.3562 9.69298 19.093 10.0733 18.8467C10.9008 18.3107 12.5908 17.8669 15.9999 17.8669C19.409 17.8669 21.0991 18.3107 21.9266 18.8467C22.3069 19.093 22.5001 19.3562 22.613 19.6282C22.7347 19.9215 22.7872 20.2847 22.7872 20.7606Z"
+      stroke="#0A0A0A"
+      strokeWidth={2}
+    />
+  </svg>
+);
+const DownArrow = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={24}
+    height={24}
+    viewBox="0 0 24 24"
+    fill="none"
+  >
+    <path
+      d="M6 10L12 16L18 10"
+      stroke="#0A0A0A"
+      strokeWidth={2}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
+const En = () => (
+  <span className="font-inter font-normal font-semibold font-size-4">En</span>
+);
+
 const SideBar = () => (
-  // <aside className="w-full md:h-screen md:w-64 bg-[#FFFBF7] md:flex md:flex-col px-12">
-  //   <div className="flex-grow h-50 w-50">
-  //     <img src={Logo} alt="Logo" className="object-cover" />
-  //   </div>
-  //   <nav className="overflow-y-auto h-full flex-grow">
-  //     <header>
-  //       <span className="text-xs text-gray-500 block py-6 px-6">Main Pages</span>
-  //     </header>
-  //     <ul className="font-medium px-4 text-left"></ul>
-  //   </nav>
-  //   <section id="user" className="p-4 border-t border-solid border-gray-800">
-  //     <div className="flex">
-  //       <img
-  //         src="http://preview.janlosert.com/static/media/a07.f7e8bebd.jpg"
-  //         className="rounded-full h-10"
-  //         alt=""
-  //       />
-  //       <div className="flex flex-col p-2">
-  //         <span className="text-white pb-1">Kara Johnson</span>
-  //         <span className="text-xs text-gray-500">HR Specialist</span>
-  //       </div>
-  //     </div>
-  //   </section>
-  //   <footer className="p-4 border-t border-solid border-gray-800">
-  //     <h4 className="pb-2 text-gray-100 text-sm">© Buildings Ltd. 2018</h4>
-  //     <p className="text-gray-600 text-xs leading-normal">
-  //       Created with love for the environment. By designers and develodivers who
-  //       love to work together in offices!
-  //     </p>
-  //   </footer>
-  // </aside>
   <div className="w-[280px] bg-[#FFFBF7] px-12">
     <div className="flex items-center space-x-4  my-5">
       <img src={Logo} alt="Logo" className="object-cover" />
@@ -353,24 +212,33 @@ const SideBar = () => (
         </a>
       </li>
       <li>
-        <a
-          href="#"
-          className="flex items-center space-x-3  p-2  font-medium "
-        >
+        <a href="#" className="flex items-center space-x-3  p-2  font-medium ">
           <span className="">
             <svg
-              className="h-5"
-              xmlns="http://www.w3.org/2000/svg"
+              width={19}
+              height={18}
+              viewBox="0 0 19 18"
               fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"
-              />
+              <g id="Group 735">
+                <path
+                  id="Rectangle 146"
+                  d="M4.46875 16.1563L4.46875 1.53125M4.46875 1.53125L1.46875 4.53125M4.46875 1.53125L7.46875 4.53125"
+                  stroke="#0A0A0A"
+                  strokeWidth={2}
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+                <path
+                  id="Rectangle 147"
+                  d="M14.1562 1.53125V16.1562M14.1562 16.1562L11.1562 13.1562M14.1562 16.1562L17.1562 13.1562"
+                  stroke="#0A0A0A"
+                  strokeWidth={2}
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </g>
             </svg>
           </span>
           <span>Transactions</span>
@@ -383,21 +251,50 @@ const SideBar = () => (
         >
           <span className="text-gray-600">
             <svg
-              className="h-5"
-              xmlns="http://www.w3.org/2000/svg"
+              width={22}
+              height={20}
+              viewBox="0 0 22 20"
               fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-              />
+              <g id="Group 733">
+                <rect
+                  id="Rectangle 145"
+                  x="1.25"
+                  y="10.75"
+                  width="4.5"
+                  height="7.5"
+                  stroke="#0A0A0A"
+                  strokeWidth={2}
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+                <rect
+                  id="Rectangle 146"
+                  x="8.75"
+                  y={7}
+                  width="4.5"
+                  height="11.25"
+                  stroke="#0A0A0A"
+                  strokeWidth={2}
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+                <rect
+                  id="Rectangle 147"
+                  x="16.25"
+                  y="1.75"
+                  width="4.5"
+                  height="16.5"
+                  stroke="#0A0A0A"
+                  strokeWidth={2}
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </g>
             </svg>
           </span>
-          <span>My profile</span>
+          <span>Analytics</span>
         </a>
       </li>
       <li>
@@ -407,21 +304,29 @@ const SideBar = () => (
         >
           <span className="">
             <svg
-              className="h-5"
               xmlns="http://www.w3.org/2000/svg"
-              fill="none"
+              width={24}
+              height={24}
               viewBox="0 0 24 24"
-              stroke="currentColor"
+              fill="none"
             >
               <path
+                d="M8.22214 8.7627L10.6097 20.1111C10.6365 20.2329 10.6321 20.3594 10.597 20.479C10.5619 20.5986 10.4971 20.7074 10.4088 20.7953L9.5405 21.6773C9.45646 21.7632 9.35304 21.8276 9.23894 21.8651C9.12483 21.9026 9.00338 21.9122 8.88479 21.893C8.76621 21.8739 8.65397 21.8265 8.55752 21.7549C8.46106 21.6833 8.38322 21.5896 8.33053 21.4816L6.09658 16.8741"
+                stroke="#0A0A0A"
+                strokeWidth={2}
                 strokeLinecap="round"
                 strokeLinejoin="round"
+              />
+              <path
+                d="M6.09685 16.8735C5.1236 17.0782 4.10886 16.888 3.27588 16.3446C2.4429 15.8012 1.8599 14.9491 1.65514 13.9759C1.45038 13.0026 1.64063 11.9879 2.18403 11.1549C2.72744 10.3219 3.5795 9.73891 4.55275 9.53415L8.22241 8.7621C8.22241 8.7621 13.2223 7.71018 17.1823 2.67134C17.2706 2.56036 17.3885 2.4767 17.5225 2.43006C17.6564 2.38342 17.8008 2.37571 17.939 2.40782C18.0771 2.43994 18.2033 2.51056 18.3029 2.6115C18.4026 2.71245 18.4715 2.83957 18.5018 2.97812L21.5051 17.2531C21.5332 17.3921 21.5213 17.5363 21.4708 17.6688C21.4203 17.8013 21.3332 17.9168 21.2198 18.0019C21.1063 18.0869 20.971 18.138 20.8296 18.1493C20.6882 18.1606 20.5466 18.1316 20.421 18.0656C14.7664 15.0495 9.76652 16.1014 9.76652 16.1014L6.09685 16.8735Z"
+                stroke="#0A0A0A"
                 strokeWidth={2}
-                d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
             </svg>
           </span>
-          <span>My orders</span>
+          <span>Marketing</span>
         </a>
       </li>
       <li>
@@ -431,21 +336,77 @@ const SideBar = () => (
         >
           <span className=" text-gray-600">
             <svg
-              className="h-5"
-              xmlns="http://www.w3.org/2000/svg"
+              width={18}
+              height={24}
+              viewBox="0 0 18 24"
               fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
-              />
+              <g id="Group 699">
+                <path
+                  id="Vector 271"
+                  d="M1.125 12.75V12.75C1.125 8.40076 4.65076 4.875 9 4.875H16.875M16.875 4.875L14.0956 1.5M16.875 4.875L14.0956 8.25"
+                  stroke="#0A0A0A"
+                  strokeWidth={2}
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+                <path
+                  id="Vector 272"
+                  d="M16.875 11.25V11.25C16.875 15.5992 13.3492 19.125 9 19.125H1.125M1.125 19.125L3.90441 22.5M1.125 19.125L3.90441 15.75"
+                  stroke="#0A0A0A"
+                  strokeWidth={2}
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </g>
             </svg>
           </span>
-          <span>My wishlist</span>
+          <span>Exchange rates</span>
+        </a>
+      </li>
+
+      <div className="text-gray-500 font-sans font-normal font-medium line-height-6 tracking-tight my-24">
+        Accept payments
+      </div>
+      <li>
+        <a
+          href="#"
+          className="flex items-center space-x-3 text-gray-700 p-2 rounded-md font-medium hover:bg-gray-200 focus:bg-gray-200 focus:shadow-outline"
+        >
+          <span className="text-gray-600">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width={24}
+              height={24}
+              viewBox="0 0 24 24"
+              fill="none"
+            >
+              <g clipPath="url(#clip0_3901_297)">
+                <path
+                  d="M7.5 21.75C8.32843 21.75 9 21.0784 9 20.25C9 19.4216 8.32843 18.75 7.5 18.75C6.67157 18.75 6 19.4216 6 20.25C6 21.0784 6.67157 21.75 7.5 21.75Z"
+                  fill="#0A0A0A"
+                />
+                <path
+                  d="M17.25 21.75C18.0784 21.75 18.75 21.0784 18.75 20.25C18.75 19.4216 18.0784 18.75 17.25 18.75C16.4216 18.75 15.75 19.4216 15.75 20.25C15.75 21.0784 16.4216 21.75 17.25 21.75Z"
+                  fill="#0A0A0A"
+                />
+                <path
+                  d="M3.96562 6.75H20.7844L18.3094 15.4125C18.2211 15.7269 18.032 16.0036 17.7711 16.2C17.5103 16.3965 17.1922 16.5019 16.8656 16.5H7.88437C7.55783 16.5019 7.2397 16.3965 6.97886 16.2C6.71803 16.0036 6.52893 15.7269 6.44062 15.4125L3.04688 3.54375C3.00203 3.38696 2.9073 3.24905 2.77704 3.15093C2.64677 3.05282 2.48808 2.99983 2.325 3H0.75"
+                  stroke="#0A0A0A"
+                  strokeWidth={2}
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </g>
+              <defs>
+                <clipPath id="clip0_3901_297">
+                  <rect width={24} height={24} fill="white" />
+                </clipPath>
+              </defs>
+            </svg>
+          </span>
+          <span>Checkout</span>
         </a>
       </li>
       <li>
@@ -455,23 +416,43 @@ const SideBar = () => (
         >
           <span className="text-gray-600">
             <svg
-              className="h-5"
               xmlns="http://www.w3.org/2000/svg"
-              fill="none"
+              width={24}
+              height={24}
               viewBox="0 0 24 24"
-              stroke="currentColor"
+              fill="none"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"
-              />
+              <g clipPath="url(#clip0_3901_304)">
+                <path
+                  d="M11.4662 6.69381L13.3225 4.83756C14.1084 4.12124 15.1401 3.73529 16.2032 3.7599C17.2663 3.78451 18.279 4.2178 19.0309 4.96972C19.7829 5.72164 20.2161 6.73438 20.2408 7.79747C20.2654 8.86057 19.8794 9.89227 19.1631 10.6782L16.51 13.3219C16.1276 13.7057 15.6732 14.0103 15.1729 14.2181C14.6725 14.4259 14.1361 14.5328 13.5943 14.5328C13.0526 14.5328 12.5161 14.4259 12.0158 14.2181C11.5155 14.0103 11.0611 13.7057 10.6787 13.3219"
+                  stroke="#0A0A0A"
+                  strokeWidth={2}
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+                <path
+                  d="M12.5344 17.3048L10.6782 19.1611C9.89228 19.8774 8.86057 20.2634 7.79748 20.2387C6.73438 20.2141 5.72164 19.7808 4.96972 19.0289C4.2178 18.277 3.78451 17.2643 3.7599 16.2012C3.73529 15.1381 4.12124 14.1064 4.83756 13.3205L7.49069 10.6767C7.87306 10.2929 8.32744 9.98837 8.82778 9.78058C9.32811 9.57279 9.86455 9.46582 10.4063 9.46582C10.9481 9.46582 11.4845 9.57279 11.9849 9.78058C12.4852 9.98837 12.9396 10.2929 13.3219 10.6767"
+                  stroke="#0A0A0A"
+                  strokeWidth={2}
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </g>
+              <defs>
+                <clipPath id="clip0_3901_304">
+                  <rect width={24} height={24} fill="white" />
+                </clipPath>
+              </defs>
             </svg>
           </span>
-          <span>Settings</span>
+          <span>Payment Links</span>
         </a>
       </li>
+
+      <div className="text-gray-500 font-sans font-normal font-medium line-height-6 tracking-tight my-24">
+        Send payments
+      </div>
+
       <li>
         <a
           href="#"
@@ -479,45 +460,33 @@ const SideBar = () => (
         >
           <span className="text-gray-600">
             <svg
-              className="h-5"
-              xmlns="http://www.w3.org/2000/svg"
+              width={17}
+              height={18}
+              viewBox="0 0 17 18"
               fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
-              />
+              <g id="Group 735">
+                <path
+                  id="Rectangle 146"
+                  d="M1 4L15.625 4M15.625 4L12.625 0.999999M15.625 4L12.625 7"
+                  stroke="#0A0A0A"
+                  strokeWidth={2}
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+                <path
+                  id="Rectangle 147"
+                  d="M15.625 13.6875L1 13.6875M1 13.6875L4 10.6875M1 13.6875L4 16.6875"
+                  stroke="#0A0A0A"
+                  strokeWidth={2}
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </g>
             </svg>
           </span>
-          <span>Change password</span>
-        </a>
-      </li>
-      <li>
-        <a
-          href="#"
-          className="flex items-center space-x-3 text-gray-700 p-2 rounded-md font-medium hover:bg-gray-200 focus:bg-gray-200 focus:shadow-outline"
-        >
-          <span className="text-gray-600">
-            <svg
-              className="h-5"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"
-              />
-            </svg>
-          </span>
-          <span>Logout</span>
+          <span>Wire</span>
         </a>
       </li>
     </ul>
