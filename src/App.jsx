@@ -373,7 +373,7 @@ const SideBar = () => (
               />
             </svg>
           </span>
-          <span>Personal messages</span>
+          <span>Transactions</span>
         </a>
       </li>
       <li>
