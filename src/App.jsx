@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Logo from "./assets/klasha.png";
+import Chart from "./assets/chart.png";
 import viteLogo from "/vite.svg";
 import "./App.css";
 import { Analytics } from "@vercel/analytics/react";
@@ -116,41 +117,41 @@ const Component4 = () => (
   <div className="text-dark ">
     <p>24 Aug - 01 Sep 21</p>
     <svg
-  xmlns="http://www.w3.org/2000/svg"
-  width={209}
-  height={74}
-  viewBox="0 0 209 74"
-  fill="none"
-  className="my-4"
->
-  <g clipPath="url(#clip0_2_3741)">
-    <path
-      d="M208 28.5L194.892 32.5L182.876 16.5L171.406 32.5L156.66 37L143.551 31L132.628 52L111.327 34.5L94.942 27L82.38 52L69.8179 62L58.8945 43.5L44.6939 45.5L31.5858 9.5L19.0237 1L6.46174 43.5L1 37.3806"
-      stroke="#EF2C5A"
-      strokeLinecap="round"
-    />
-    <path
-      d="M19.0237 1L6.46174 43.5L1 37.3806V74H208V28.5L194.892 32.5L182.876 16.5L171.406 32.5L156.66 37L143.551 31L132.628 52L111.327 34.5L94.942 27L82.38 52L69.8179 62L58.8945 43.5L44.6939 45.5L31.5858 9.5L19.0237 1Z"
-      fill="url(#paint0_linear_2_3741)"
-    />
-  </g>
-  <defs>
-    <linearGradient
-      id="paint0_linear_2_3741"
-      x1="104.5"
-      y1={-317}
-      x2="104.5"
-      y2={69}
-      gradientUnits="userSpaceOnUse"
+      xmlns="http://www.w3.org/2000/svg"
+      width={209}
+      height={74}
+      viewBox="0 0 209 74"
+      fill="none"
+      className="my-4"
     >
-      <stop stopColor="#EF2C5A" />
-      <stop offset={1} stopColor="#EF2C5A" stopOpacity={0} />
-    </linearGradient>
-    <clipPath id="clip0_2_3741">
-      <rect width={209} height={74} fill="white" />
-    </clipPath>
-  </defs>
-</svg>
+      <g clipPath="url(#clip0_2_3741)">
+        <path
+          d="M208 28.5L194.892 32.5L182.876 16.5L171.406 32.5L156.66 37L143.551 31L132.628 52L111.327 34.5L94.942 27L82.38 52L69.8179 62L58.8945 43.5L44.6939 45.5L31.5858 9.5L19.0237 1L6.46174 43.5L1 37.3806"
+          stroke="#EF2C5A"
+          strokeLinecap="round"
+        />
+        <path
+          d="M19.0237 1L6.46174 43.5L1 37.3806V74H208V28.5L194.892 32.5L182.876 16.5L171.406 32.5L156.66 37L143.551 31L132.628 52L111.327 34.5L94.942 27L82.38 52L69.8179 62L58.8945 43.5L44.6939 45.5L31.5858 9.5L19.0237 1Z"
+          fill="url(#paint0_linear_2_3741)"
+        />
+      </g>
+      <defs>
+        <linearGradient
+          id="paint0_linear_2_3741"
+          x1="104.5"
+          y1={-317}
+          x2="104.5"
+          y2={69}
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stopColor="#EF2C5A" />
+          <stop offset={1} stopColor="#EF2C5A" stopOpacity={0} />
+        </linearGradient>
+        <clipPath id="clip0_2_3741">
+          <rect width={209} height={74} fill="white" />
+        </clipPath>
+      </defs>
+    </svg>
 
     <p className="font-inter text-sm font-normal">Last month</p>
     <h5 className="font-general-sans text-lg font-medium">₦1,652.50</h5>
@@ -177,6 +178,26 @@ const SalesOverview = () => (
           <Component />
         </div>
       ))}
+    </div>
+    {/* basis-3/4 */}
+    <div className="flex flex-wrap justify-between 	 mt-10">
+
+      <div className="h-60 basis-3/4   border-0 border-solid border-black rounded-lg flex flex-col image-wrapper">
+       
+         <img
+            src="/src/assets/chart.png"
+            alt="Logo"
+            // className="max-w-full max-h-full object-cover border-2 border-[#0A0A0A]"
+          />
+    
+      </div>
+
+      <div
+        className="w-64 h-60  rounded-lg flex flex-col  gap-8 p-4"
+        style={{ backgroundColor: "#EF2C5A" }}
+      >
+        i
+      </div>
     </div>
   </section>
 );
