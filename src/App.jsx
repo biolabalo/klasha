@@ -193,10 +193,10 @@ const SalesOverview = () => (
       </div>
 
       <div
-        className="w-64 h-60  rounded-lg flex flex-col  gap-8 p-4"
+        className="w-64 h-60  rounded-lg flex flex-col  gap-8 p-4 font-sans font-normal font-medium text-white text-xl"
         style={{ backgroundColor: "#EF2C5A" }}
       >
-        i
+        KlashaWire - send money to businesses globally from Africa
       </div>
     </div>
   </section>
