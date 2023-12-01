@@ -182,12 +182,12 @@ const SalesOverview = () => (
     {/* basis-3/4 */}
     <div className="flex flex-wrap justify-between 	 mt-10">
 
-      <div className="h-60 basis-3/4   border-0 border-solid border-black rounded-lg flex flex-col image-wrapper">
+      <div className="h-60 basis-3/4   border-0 border-solid border-black rounded-lg flex flex-col image-wrapper overflow-hidden">
        
          <img
             src={Chart}
             alt=""
-            // className="max-w-full max-h-full object-cover border-2 border-[#0A0A0A]"
+            className="w-full h-full object-fill"
           />
     
       </div>
