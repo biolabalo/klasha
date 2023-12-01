@@ -2,15 +2,14 @@ import { useState } from "react";
 import Logo from "./assets/klasha.png";
 import viteLogo from "/vite.svg";
 import "./App.css";
-import { Analytics } from '@vercel/analytics/react';
-
+import { Analytics } from "@vercel/analytics/react";
 
 function App() {
   const [count, setCount] = useState(0);
 
   return (
     <>
-       <Analytics />
+      <Analytics />
       <div id="app" className="md:flex antialiased">
         <SideBar />
         <main className="bg-white-100 h-screen w-full overflow-y-auto">
@@ -25,29 +24,154 @@ function App() {
 
 export default App;
 
-const Component1 = () => (<div>
-  <p className='font-inter text-sm font-normal'>Today's sales</p>
-  <h5 className='font-general-sans text-lg font-medium'>₦1,652.50</h5>
-</div>)
-const Component2 = () => <div>Component 2 Content</div>;
-const Component3 = () => <div>Component 3 Content</div>;
-const Component4 = () => <div>Component 4 Content</div>;
+const Component1 = () => (
+  <div>
+    <p className="font-inter text-sm font-normal">Today's sales</p>
+    <h5 className="font-general-sans text-lg font-medium">₦1,652.50</h5>
+  </div>
+);
+const Component2 = () => (
+  <div className="text-white ">
+    <p>24 Aug - 01 Sep 21</p>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={201}
+      height={69}
+      viewBox="0 0 201 69"
+      fill="none"
+      className="my-4"
+    >
+      <path
+        d="M11.8083 32.7391L1 1V69H200V1L189.192 21L175.84 17.9565L163.125 41.8696L148.502 44.0435L135.786 41.8696L119.891 51L95.0958 17.9565L79.8371 24.913L67.7572 44.0435L53.77 2.73913L38.5112 11.4348L26.4313 38.3913L11.8083 32.7391Z"
+        fill="url(#paint0_linear_2_3725)"
+      />
+      <path
+        d="M1 1L11.8083 32.7391L26.4313 38.3913L38.5112 11.4348L53.77 2.73913L67.7572 44.0435L79.8371 24.913L95.0958 17.9565L119.891 51L135.786 41.8696L148.502 44.0435L163.125 41.8696L175.84 17.9565L189.192 21L200 1"
+        stroke="#EF2C5A"
+        strokeLinecap="round"
+      />
+      <defs>
+        <linearGradient
+          id="paint0_linear_2_3725"
+          x1="100.5"
+          y1="-103.5"
+          x2="100.5"
+          y2={69}
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stopColor="#EF2C5A" />
+          <stop offset={1} stopColor="#EF2C5A" stopOpacity={0} />
+        </linearGradient>
+      </defs>
+    </svg>
+    <p className="font-inter text-sm font-normal">This week</p>
+    <h5 className="font-general-sans text-lg font-medium">₦1,652.50</h5>
+  </div>
+);
+const Component3 = () => (
+  <div className="text-dark ">
+    <p>24 Aug - 01 Sep 21</p>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={210}
+      height={78}
+      viewBox="0 0 210 78"
+      fill="none"
+      className="my-4"
+    >
+      <g clipPath="url(#clip0_2_3733)">
+        <path
+          d="M19.6872 37.3125H6.93592L1 32.313V77.7798C70.0692 77.946 208.318 78.1786 208.757 77.7798C209.197 77.3809 208.94 50.6354 208.757 37.3125H206.559L193.368 9.94656L168.745 6.78895L156.433 40.4701L145.001 9.94656L130.931 27.3134L119.499 1L93.5564 9.94656L83.0036 3.10507L57.9409 72.0462H44.7499L19.6872 37.3125Z"
+          fill="url(#paint0_linear_2_3733)"
+        />
+        <path
+          d="M1 32.2926L6.94286 37.2889H19.709L44.8011 72H58.0074L83.0995 3.1037L93.6646 9.94074L119.637 1L131.083 27.2963L145.169 9.94074L156.615 40.4444L168.941 6.78519L193.593 9.94074L206.799 37.2889H209"
+          stroke="#EF2C5A"
+          strokeLinecap="round"
+        />
+      </g>
+      <defs>
+        <linearGradient
+          id="paint0_linear_2_3733"
+          x1={105}
+          y1="-615.731"
+          x2={105}
+          y2={78}
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stopColor="#EF2C5A" />
+          <stop offset={1} stopColor="#EF2C5A" stopOpacity={0} />
+        </linearGradient>
+        <clipPath id="clip0_2_3733">
+          <rect width={210} height={78} fill="white" />
+        </clipPath>
+      </defs>
+    </svg>
+
+    <p className="font-inter text-sm font-normal">This month</p>
+    <h5 className="font-general-sans text-lg font-medium">₦1,652.50</h5>
+  </div>
+);
+const Component4 = () => (
+  <div className="text-dark ">
+    <p>24 Aug - 01 Sep 21</p>
+    <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width={209}
+  height={74}
+  viewBox="0 0 209 74"
+  fill="none"
+  className="my-4"
+>
+  <g clipPath="url(#clip0_2_3741)">
+    <path
+      d="M208 28.5L194.892 32.5L182.876 16.5L171.406 32.5L156.66 37L143.551 31L132.628 52L111.327 34.5L94.942 27L82.38 52L69.8179 62L58.8945 43.5L44.6939 45.5L31.5858 9.5L19.0237 1L6.46174 43.5L1 37.3806"
+      stroke="#EF2C5A"
+      strokeLinecap="round"
+    />
+    <path
+      d="M19.0237 1L6.46174 43.5L1 37.3806V74H208V28.5L194.892 32.5L182.876 16.5L171.406 32.5L156.66 37L143.551 31L132.628 52L111.327 34.5L94.942 27L82.38 52L69.8179 62L58.8945 43.5L44.6939 45.5L31.5858 9.5L19.0237 1Z"
+      fill="url(#paint0_linear_2_3741)"
+    />
+  </g>
+  <defs>
+    <linearGradient
+      id="paint0_linear_2_3741"
+      x1="104.5"
+      y1={-317}
+      x2="104.5"
+      y2={69}
+      gradientUnits="userSpaceOnUse"
+    >
+      <stop stopColor="#EF2C5A" />
+      <stop offset={1} stopColor="#EF2C5A" stopOpacity={0} />
+    </linearGradient>
+    <clipPath id="clip0_2_3741">
+      <rect width={209} height={74} fill="white" />
+    </clipPath>
+  </defs>
+</svg>
+
+    <p className="font-inter text-sm font-normal">Last month</p>
+    <h5 className="font-general-sans text-lg font-medium">₦1,652.50</h5>
+  </div>
+);
 
 const componentsArray = [Component1, Component2, Component3, Component4];
 
-const colorsArray = ['#FFFFFF', '#000000', '#FFFFFF', '#FFFFFF'];
+const colorsArray = ["#FFFFFF", "#000000", "#FFFFFF", "#FFFFFF"];
 
 const SalesOverview = () => (
-  <section className='px-6 pt-20'>
+  <section className="px-6 pt-20">
     <h5 className="text-[#1A1A1A] font-sans font-normal font-medium text-xl my-10">
       Sales overview
     </h5>
 
     <div className="flex flex-wrap justify-between">
-    {componentsArray.map((Component, index) => (
+      {componentsArray.map((Component, index) => (
         <div
           key={index}
-          className="w-64 h-60 border-2 border-solid border-black rounded-lg mb-4 mr-4 p-8"
+          className="w-64 h-60 border-2 border-solid border-black rounded-lg flex flex-col  gap-8 p-4"
           style={{ backgroundColor: colorsArray[index] }}
         >
           <Component />
