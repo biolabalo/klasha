@@ -185,8 +185,8 @@ const SalesOverview = () => (
       <div className="h-60 basis-3/4   border-0 border-solid border-black rounded-lg flex flex-col image-wrapper">
        
          <img
-            src="/src/assets/chart.png"
-            alt="Logo"
+            src={Chart}
+            alt=""
             // className="max-w-full max-h-full object-cover border-2 border-[#0A0A0A]"
           />
     
